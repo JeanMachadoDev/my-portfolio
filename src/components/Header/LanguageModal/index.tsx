@@ -2,7 +2,7 @@ import { Img } from '@chakra-ui/react'
 
 import { useTranslation } from '@/hooks/useTranslation/Context'
 import { Languages } from '@/locales/types'
-import { theme } from '@/styles/theme'
+import { theme } from '@/hooks/useChakraTheme/theme'
 
 import * as S from './styles'
 

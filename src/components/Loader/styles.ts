@@ -8,6 +8,6 @@ export const Container = styled(Flex)`
     height: 100vh;
     align-items: center;
     justify-content: center;
-    background: ${theme.colors.secondary};
+    background: ${theme.colors.primary};
   `}
 `

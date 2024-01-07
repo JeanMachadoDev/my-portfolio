@@ -1,6 +1,6 @@
 import '@emotion/react'
 import { ChakraTheme } from '@chakra-ui/react'
-import { customTheme } from '@/styles/theme'
+import { customTheme } from '@/hooks/useChakraTheme/theme'
 
 declare module '@emotion/react' {
   export interface Theme extends ChakraTheme {

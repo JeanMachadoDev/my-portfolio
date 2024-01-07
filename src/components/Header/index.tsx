@@ -1,11 +1,11 @@
-import { Flex, Img, Menu, MenuButton, useColorMode, useMediaQuery } from '@chakra-ui/react'
+import { Img, Menu, MenuButton, useColorMode, useMediaQuery } from '@chakra-ui/react'
 
 import { ColorMode, ColorModeProps } from '@/hooks/useColorTheme/types'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 import { useTranslation } from '@/hooks/useTranslation/Context'
 import { getLenguageIcon, getInitialNameIcon } from './helpers'
 import { LanguageModal } from './LanguageModal'
-import { theme } from '@/styles/theme'
+import { theme } from '@/hooks/useChakraTheme/theme'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaSun, FaMoon } from 'react-icons/fa'
@@ -52,7 +52,7 @@ export const Header = () => {
             </>
           )}
 
-          <Menu>
+          <Menu placement='bottom-end'>
             <S.Text>
               <MenuButton>
                 <S.Text>
@@ -65,13 +65,13 @@ export const Header = () => {
           </Menu>
 
           {colorMode === ColorMode.dark ? (
-            <Flex alignItems='center' onClick={() => handleColorMode(ColorMode.light)}>
+            <S.Menu alignItems='center' onClick={() => handleColorMode(ColorMode.light)}>
               <FaSun size={theme.sizes[20]} />
-            </Flex>
+            </S.Menu>
           ) : (
-            <Flex alignItems='center' onClick={() => handleColorMode(ColorMode.dark)}>
+            <S.Menu alignItems='center' onClick={() => handleColorMode(ColorMode.dark)}>
               <FaMoon size={theme.sizes[20]} />
-            </Flex>
+            </S.Menu>
           )}
 
           {isLargerThanHD && (

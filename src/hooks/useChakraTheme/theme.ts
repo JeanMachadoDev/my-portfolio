@@ -1,17 +1,8 @@
 import { theme as chakraTheme } from '@chakra-ui/react'
 
-const config = {
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
-}
-
 export const theme = {
-  ...chakraTheme,
-  config,
-  colors: {
-    ...chakraTheme.colors,
-  },
   sizes: {
+    ...chakraTheme.sizes,
     1: '0.0667rem',
     2: '0.1333rem',
     3: '0.2rem',

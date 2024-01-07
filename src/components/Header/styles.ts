@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
-import { Flex, MenuButton as MenuButtonChakra } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 
 export const Container = styled(Flex)`
   ${({ theme }) => css`
