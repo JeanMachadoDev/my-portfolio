@@ -24,6 +24,7 @@ export const Logo = styled(Flex)`
     font-size: ${theme.sizes[24]};
     line-height: ${theme.sizes[24]};
     color: ${color || theme.colors.text};
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
   `}
 `

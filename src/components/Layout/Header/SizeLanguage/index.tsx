@@ -9,7 +9,7 @@ import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
 import * as S from './styles'
 
 export const SizeLanguage = ({ ...rest }: SizeLanguageProps) => {
-  const [isLargerThanHD] = useMediaQuery(['(max-width: 1200px)', '(display-mode: browser)'])
+  const [isLargerThanHD] = useMediaQuery(['(max-width: 1350px)', '(display-mode: browser)'])
 
   const { onDecreaseFontSize, onDefaultFontSize, onIncreaseFontSize } = useLayout()
 

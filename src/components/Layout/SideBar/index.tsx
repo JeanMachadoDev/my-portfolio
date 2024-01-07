@@ -5,6 +5,7 @@ import { useLayout } from '@/hooks/useLayout/Context'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 
 import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
+import { useTranslation } from '@/hooks/useTranslation/Context'
 import { SizeLanguage } from '../Header/SizeLanguage'
 
 import * as S from './styles'
@@ -12,6 +13,7 @@ import * as S from './styles'
 export const SideBar = () => {
   const { isMenuOpen, onIsMenuOpen } = useLayout()
   const { colorTheme } = useColorTheme()
+  const { t } = useTranslation()
 
   return (
     <Drawer isOpen={isMenuOpen} placement='left' onClose={() => onIsMenuOpen(false)}>
@@ -21,12 +23,12 @@ export const SideBar = () => {
         <S.CloseButtom />
 
         <S.Content>
-          <BoxWithLineBelow fontSize={theme.sizes[22]}>{'Home'.toLocaleUpperCase()}</BoxWithLineBelow>
-          <BoxWithLineBelow fontSize={theme.sizes[22]}>{'About'.toLocaleUpperCase()}</BoxWithLineBelow>
-          <BoxWithLineBelow fontSize={theme.sizes[22]}>{'Skills'.toLocaleUpperCase()}</BoxWithLineBelow>
-          <BoxWithLineBelow fontSize={theme.sizes[22]}>{'Services'.toLocaleUpperCase()}</BoxWithLineBelow>
-          <BoxWithLineBelow fontSize={theme.sizes[22]}>{'Projects'.toLocaleUpperCase()}</BoxWithLineBelow>
-          <BoxWithLineBelow fontSize={theme.sizes[22]}>{'Contact'.toLocaleUpperCase()}</BoxWithLineBelow>
+          <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Home').toLocaleUpperCase()}</BoxWithLineBelow>
+          <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('About').toLocaleUpperCase()}</BoxWithLineBelow>
+          <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Skills').toLocaleUpperCase()}</BoxWithLineBelow>
+          <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Services').toLocaleUpperCase()}</BoxWithLineBelow>
+          <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Projects').toLocaleUpperCase()}</BoxWithLineBelow>
+          <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Contact').toLocaleUpperCase()}</BoxWithLineBelow>
         </S.Content>
 
         <S.Footer borderTopWidth={theme.sizes[1]} borderColor={colorTheme.border}>

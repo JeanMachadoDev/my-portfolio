@@ -18,7 +18,7 @@ import { FaSun, FaMoon } from 'react-icons/fa'
 import * as S from './styles'
 
 export const Header = () => {
-  const [isLargerThanHD] = useMediaQuery(['(max-width: 1200px)', '(display-mode: browser)'])
+  const [isLargerThanHD] = useMediaQuery(['(max-width: 1350px)', '(display-mode: browser)'])
 
   const { onIsMenuOpen } = useLayout()
   const { colorMode, toggleColorMode } = useColorMode()
@@ -46,15 +46,15 @@ export const Header = () => {
           </S.Logo>
         </S.Logo>
 
-        <S.Nav gap={[theme.sizes[32], theme.sizes[32], theme.sizes[48]]}>
+        <S.Nav gap={[theme.sizes[32], theme.sizes[32], theme.sizes[42]]}>
           {!isLargerThanHD && (
             <>
-              <BoxWithLineBelow>{'Home'.toLocaleUpperCase()}</BoxWithLineBelow>
-              <BoxWithLineBelow>{'About'.toLocaleUpperCase()}</BoxWithLineBelow>
-              <BoxWithLineBelow>{'Skills'.toLocaleUpperCase()}</BoxWithLineBelow>
-              <BoxWithLineBelow>{'Services'.toLocaleUpperCase()}</BoxWithLineBelow>
-              <BoxWithLineBelow>{'Projects'.toLocaleUpperCase()}</BoxWithLineBelow>
-              <BoxWithLineBelow>{'Contact'.toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{t('Home').toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{t('About').toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{t('Skills').toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{t('Services').toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{t('Projects').toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{t('Contact').toLocaleUpperCase()}</BoxWithLineBelow>
             </>
           )}
 

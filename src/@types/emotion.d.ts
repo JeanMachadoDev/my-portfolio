@@ -36,6 +36,7 @@ declare module '@emotion/react' {
       28: string
       30: string
       32: string
+      42: string
       48: string
       64: string
     }
