@@ -1,17 +1,18 @@
 'use client'
 
-import { ChakraProvider } from '@chakra-ui/react'
 import { LayoutProvider } from './useLayout/Provider'
 import { TranslationProvider } from './useTranslation/Provider'
-
-import theme from '@/styles/theme'
+import { ColorThemeProvider } from './useColorTheme/Provider'
+import { ChakraThemeProvider } from './useChakraTheme/Provider'
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ChakraProvider theme={theme}>
-      <TranslationProvider>
-        <LayoutProvider>{children}</LayoutProvider>
-      </TranslationProvider>
-    </ChakraProvider>
+    <ColorThemeProvider>
+      <ChakraThemeProvider>
+        <TranslationProvider>
+          <LayoutProvider>{children}</LayoutProvider>
+        </TranslationProvider>
+      </ChakraThemeProvider>
+    </ColorThemeProvider>
   )
 }

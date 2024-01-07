@@ -1,7 +1,8 @@
 import { Img } from '@chakra-ui/react'
 
 import { useTranslation } from '@/hooks/useTranslation/Context'
-import { Languages } from '@/i18n/locales/types'
+import { Languages } from '@/locales/types'
+import { theme } from '@/styles/theme'
 
 import * as S from './styles'
 
@@ -11,18 +12,23 @@ export const LanguageModal = () => {
   return (
     <S.MenuList onClick={(event) => event.stopPropagation()}>
       <S.Language selected={!!(language === Languages.pt)} onClick={() => changeLanguage(Languages.pt)}>
-        <Img src='icons/br.png' alt='Brasil' width={6} />
-        {t('Português')}
+        <Img src='icons/br.png' alt='Portuguese' width={theme.sizes[20]} />
+        {t('Portuguese').toLocaleUpperCase()}
       </S.Language>
 
       <S.Language selected={!!(language === Languages.en)} onClick={() => changeLanguage(Languages.en)}>
-        <Img src='icons/eua.png' alt='Brasil' width={6} />
-        {t('Inglês')}
+        <Img src='icons/eua.png' alt='English' width={theme.sizes[20]} />
+        {t('English').toLocaleUpperCase()}
       </S.Language>
 
       <S.Language selected={!!(language === Languages.es)} onClick={() => changeLanguage(Languages.es)}>
-        <Img src='icons/es.png' alt='Brasil' width={6} />
-        {t('Espanhol')}
+        <Img src='icons/es.png' alt='Spanish' width={theme.sizes[20]} />
+        {t('Spanish').toLocaleUpperCase()}
+      </S.Language>
+
+      <S.Language selected={!!(language === Languages.fr)} onClick={() => changeLanguage(Languages.fr)}>
+        <Img src='icons/fr.png' alt='French' width={theme.sizes[20]} />
+        {t('French').toLocaleUpperCase()}
       </S.Language>
     </S.MenuList>
   )

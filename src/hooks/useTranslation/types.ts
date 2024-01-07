@@ -1,5 +1,4 @@
-import { ReactNode } from 'react'
-import { LocaleProps } from '@/i18n/locales/types'
+import { LocaleProps } from '@/locales/types'
 
 export type TranslationContextProps = {
   language: LocaleProps

@@ -1,8 +1,8 @@
 import { ReactNode, useCallback, useEffect, useState } from 'react'
 
 import { TranslationContext } from './Context'
-import { Languages, LocaleProps } from '@/i18n/locales/types'
-import { locales } from '@/i18n/locales'
+import { Languages, LocaleProps } from '@/locales/types'
+import { locales } from '@/locales'
 
 import { ReactChildrenProps } from '@/utils/globalTypes/types'
 import { getLocalStorage, setLocalStorage } from '@/utils/localStorage'

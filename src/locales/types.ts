@@ -1,3 +1,5 @@
+import json from './en-US.json'
+
 export enum Languages {
   'pt' = 'pt-BR',
   'en' = 'en-US',
