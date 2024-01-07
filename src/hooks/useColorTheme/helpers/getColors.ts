@@ -6,4 +6,5 @@ export const getColors = (theme: ColorModeProps) => ({
   tertiary: theme === ColorMode.dark ? '#1C293B' : '#FFF',
   text: theme === ColorMode.dark ? '#EEEEEE' : '#1D1D1D',
   textPink: '#F231A5',
+  border: theme === ColorMode.dark ? '#1C293B' : '#CACACA',
 })

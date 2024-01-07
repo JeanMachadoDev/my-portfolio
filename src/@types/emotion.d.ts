@@ -10,6 +10,7 @@ declare module '@emotion/react' {
       tertiary: string
       text: string
       textPink: string
+      border: string
     }
     sizes: {
       1: string

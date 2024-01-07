@@ -1,14 +1,17 @@
-import { Drawer, DrawerContent, DrawerOverlay } from '@chakra-ui/react'
+import { Drawer, DrawerContent, DrawerFooter, DrawerOverlay } from '@chakra-ui/react'
 
 import { theme } from '@/hooks/useChakraTheme/theme'
 import { useLayout } from '@/hooks/useLayout/Context'
+import { useColorTheme } from '@/hooks/useColorTheme/Context'
 
 import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
+import { SizeLanguage } from '../Header/SizeLanguage'
 
 import * as S from './styles'
 
 export const SideBar = () => {
   const { isMenuOpen, onIsMenuOpen } = useLayout()
+  const { colorTheme } = useColorTheme()
 
   return (
     <Drawer isOpen={isMenuOpen} placement='left' onClose={() => onIsMenuOpen(false)}>
@@ -25,6 +28,10 @@ export const SideBar = () => {
           <BoxWithLineBelow fontSize={theme.sizes[22]}>{'Projects'.toLocaleUpperCase()}</BoxWithLineBelow>
           <BoxWithLineBelow fontSize={theme.sizes[22]}>{'Contact'.toLocaleUpperCase()}</BoxWithLineBelow>
         </S.Content>
+
+        <S.Footer borderTopWidth={theme.sizes[1]} borderColor={colorTheme.border}>
+          <SizeLanguage fontSize={theme.sizes[22]} />
+        </S.Footer>
       </DrawerContent>
     </Drawer>
   )

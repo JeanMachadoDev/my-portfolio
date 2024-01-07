@@ -10,6 +10,7 @@ import { getLenguageIcon, getInitialNameIcon } from './helpers'
 import { LanguageModal } from './LanguageModal'
 
 import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
+import { SizeLanguage } from './SizeLanguage'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaSun, FaMoon } from 'react-icons/fa'
@@ -19,10 +20,10 @@ import * as S from './styles'
 export const Header = () => {
   const [isLargerThanHD] = useMediaQuery(['(max-width: 1200px)', '(display-mode: browser)'])
 
+  const { onIsMenuOpen } = useLayout()
   const { colorMode, toggleColorMode } = useColorMode()
   const { colorTheme, onColorMode } = useColorTheme()
   const { language, t } = useTranslation()
-  const { onIsMenuOpen } = useLayout()
 
   const handleColorMode = (value: ColorModeProps) => {
     toggleColorMode()
@@ -56,6 +57,8 @@ export const Header = () => {
               <BoxWithLineBelow>{'Contact'.toLocaleUpperCase()}</BoxWithLineBelow>
             </>
           )}
+
+          {!isLargerThanHD && <SizeLanguage />}
 
           <Menu placement='bottom-end'>
             <BoxWithLineBelow>
