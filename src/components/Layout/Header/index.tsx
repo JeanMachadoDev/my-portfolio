@@ -3,9 +3,13 @@ import { Img, Menu, MenuButton, useColorMode, useMediaQuery } from '@chakra-ui/r
 import { ColorMode, ColorModeProps } from '@/hooks/useColorTheme/types'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 import { useTranslation } from '@/hooks/useTranslation/Context'
+import { useLayout } from '@/hooks/useLayout/Context'
+import { theme } from '@/hooks/useChakraTheme/theme'
+
 import { getLenguageIcon, getInitialNameIcon } from './helpers'
 import { LanguageModal } from './LanguageModal'
-import { theme } from '@/hooks/useChakraTheme/theme'
+
+import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaSun, FaMoon } from 'react-icons/fa'
@@ -18,6 +22,7 @@ export const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const { colorTheme, onColorMode } = useColorTheme()
   const { language, t } = useTranslation()
+  const { onIsMenuOpen } = useLayout()
 
   const handleColorMode = (value: ColorModeProps) => {
     toggleColorMode()
@@ -43,24 +48,24 @@ export const Header = () => {
         <S.Nav gap={[theme.sizes[32], theme.sizes[32], theme.sizes[48]]}>
           {!isLargerThanHD && (
             <>
-              <S.Text>{t('Home').toLocaleUpperCase()}</S.Text>
-              <S.Text>{t('About').toLocaleUpperCase()}</S.Text>
-              <S.Text>{t('Skills').toLocaleUpperCase()}</S.Text>
-              <S.Text>{t('Services').toLocaleUpperCase()}</S.Text>
-              <S.Text>{t('Projects').toLocaleUpperCase()}</S.Text>
-              <S.Text>{t('Contact').toLocaleUpperCase()}</S.Text>
+              <BoxWithLineBelow>{'Home'.toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{'About'.toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{'Skills'.toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{'Services'.toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{'Projects'.toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow>{'Contact'.toLocaleUpperCase()}</BoxWithLineBelow>
             </>
           )}
 
           <Menu placement='bottom-end'>
-            <S.Text>
+            <BoxWithLineBelow>
               <MenuButton>
-                <S.Text>
+                <BoxWithLineBelow>
                   {getInitialNameIcon(language)}
                   <Img width={theme.sizes[18]} mb={theme.sizes[1]} src={getLenguageIcon(language)} />
-                </S.Text>
+                </BoxWithLineBelow>
               </MenuButton>
-            </S.Text>
+            </BoxWithLineBelow>
             <LanguageModal />
           </Menu>
 
@@ -75,7 +80,7 @@ export const Header = () => {
           )}
 
           {isLargerThanHD && (
-            <S.Menu>
+            <S.Menu onClick={() => onIsMenuOpen(true)}>
               <GiHamburgerMenu />
             </S.Menu>
           )}

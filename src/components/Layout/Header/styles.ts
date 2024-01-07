@@ -12,7 +12,7 @@ export const Container = styled(Flex)`
 `
 export const Content = styled(Flex)`
   width: 100%;
-  max-width: 100rem;
+  max-width: 90rem;
   margin: auto;
   align-items: center;
   justify-content: space-between;
@@ -36,37 +36,6 @@ export const Menu = styled(Flex)`
       font-size: ${theme.sizes[24]};
       color: ${theme.colors.text};
       cursor: pointer;
-    }
-  `}
-`
-
-export const Text = styled(Flex)`
-  ${({ theme, color, fontWeight }) => css`
-    font-weight: ${fontWeight || 700};
-    color: ${color || theme.colors.text};
-    align-items: center;
-    gap: ${theme.sizes[4]};
-    position: relative;
-    cursor: pointer;
-
-    &:hover {
-      transition: all ease 0.3s;
-      filter: brightness(1);
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      height: ${theme.sizes[3]};
-      width: 100%;
-      background: ${theme.colors.textPink};
-      bottom: -${theme.sizes[4]};
-      transition: all 0.2s;
-      transform: scaleX(0);
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
     }
   `}
 `

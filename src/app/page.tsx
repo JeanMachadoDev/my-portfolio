@@ -5,8 +5,8 @@ import { Flex } from '@chakra-ui/react'
 
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 
-import { Header } from '@/components/Header'
 import { Loader } from '@/components/Loader'
+import { Layout } from '@/components/Layout'
 
 export default function Home() {
   const { colorTheme } = useColorTheme()
@@ -23,7 +23,7 @@ export default function Home() {
         <Loader />
       ) : (
         <Flex width='100%' height='100vh' background={colorTheme.primary}>
-          <Header />
+          <Layout />
         </Flex>
       )}
     </>
