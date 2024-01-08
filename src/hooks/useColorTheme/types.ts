@@ -7,5 +7,6 @@ export enum ColorMode {
 
 export type ColorThemeContextProps = {
   colorTheme: any
+  themeSelected: ColorModeProps
   onColorMode: (value: ColorModeProps) => void
 }

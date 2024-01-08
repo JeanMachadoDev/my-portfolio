@@ -8,6 +8,7 @@ export const Container = styled(Flex)`
     height: 6rem;
     background: ${theme.colors.secondary};
     box-shadow: 0 ${theme.sizes[2]} ${theme.sizes[2]} rgba(0, 0, 0, 0.2);
+    z-index: 100;
   `}
 `
 export const Content = styled(Flex)`
