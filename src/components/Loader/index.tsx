@@ -9,7 +9,7 @@ export const Loader = () => {
 
   return (
     <S.Container>
-      <Spinner thickness='8px' speed='0.85s' emptyColor={colorTheme.tertiary} color={colorTheme.textPink} size='xl' />
+      <Spinner thickness='8px' speed='0.85s' emptyColor={colorTheme.tertiary} color={colorTheme.quartiary} size='xl' />
     </S.Container>
   )
 }

@@ -10,6 +10,7 @@ import { getLenguageIcon, getInitialNameIcon } from './helpers'
 import { LanguageModal } from './LanguageModal'
 
 import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
+import { Wrapper } from '@/components/Wrapper'
 import { SizeLanguage } from './SizeLanguage'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -32,16 +33,10 @@ export const Header = () => {
 
   return (
     <S.Container>
-      <S.Content
-        padding={[
-          `0 ${theme.sizes[32]} 0 ${theme.sizes[32]}`,
-          `0 ${theme.sizes[32]} 0 ${theme.sizes[32]}`,
-          `0 ${theme.sizes[64]} 0 ${theme.sizes[64]}`,
-        ]}
-      >
+      <Wrapper>
         <S.Logo>
           WEB
-          <S.Logo color={colorTheme.textPink} fontWeight={800}>
+          <S.Logo color={colorTheme.quartiary} fontWeight={800}>
             DEV
           </S.Logo>
         </S.Logo>
@@ -88,7 +83,7 @@ export const Header = () => {
             </S.Menu>
           )}
         </S.Nav>
-      </S.Content>
+      </Wrapper>
     </S.Container>
   )
 }

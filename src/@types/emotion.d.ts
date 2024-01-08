@@ -8,8 +8,12 @@ declare module '@emotion/react' {
       primary: string
       secondary: string
       tertiary: string
-      text: string
-      textPink: string
+      quintiario: string
+      text: {
+        500: string
+        800: string
+      }
+      quartiary: string
       border: string
     }
     sizes: {

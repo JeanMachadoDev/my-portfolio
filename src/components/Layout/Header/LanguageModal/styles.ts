@@ -24,7 +24,7 @@ export const Language = styled(Flex)<ConfigModalStylesProps>`
     padding: ${theme.sizes[8]} ${theme.sizes[16]};
     align-items: center;
     gap: ${theme.sizes[8]};
-    color: ${theme.colors.text};
+    color: ${theme.colors.text[800]};
     background: ${selected ? 'rgba(0, 0, 0, 0.1)' : null};
     cursor: pointer;
 

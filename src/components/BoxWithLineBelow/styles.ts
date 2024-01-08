@@ -6,7 +6,7 @@ export const Text = styled(Flex)`
   ${({ theme, color, fontSize, fontWeight }) => css`
     font-weight: ${fontWeight || 700};
     font-size: ${fontSize || theme.sizes[16]};
-    color: ${color || theme.colors.text};
+    color: ${color || theme.colors.text[800]};
     align-items: center;
     gap: ${theme.sizes[4]};
     position: relative;
@@ -22,7 +22,7 @@ export const Text = styled(Flex)`
       position: absolute;
       height: ${theme.sizes[3]};
       width: 100%;
-      background: ${theme.colors.textPink};
+      background: ${theme.colors.quartiary};
       bottom: -${theme.sizes[4]};
       transition: all 0.2s;
       transform: scaleX(0);
