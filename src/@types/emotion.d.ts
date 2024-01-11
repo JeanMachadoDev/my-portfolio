@@ -9,12 +9,15 @@ declare module '@emotion/react' {
       secondary: string
       tertiary: string
       quintiario: string
+      quartiary: string
+      border: string
       text: {
         500: string
         800: string
       }
-      quartiary: string
-      border: string
+      component: {
+        bgButton: string
+      }
     }
     sizes: {
       1: string

@@ -1,4 +1,4 @@
-import { Img, Menu, MenuButton, useColorMode, useMediaQuery } from '@chakra-ui/react'
+import { Menu, MenuButton, useColorMode, useMediaQuery } from '@chakra-ui/react'
 
 import { ColorMode, ColorModeProps } from '@/hooks/useColorTheme/types'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
@@ -6,12 +6,13 @@ import { useTranslation } from '@/hooks/useTranslation/Context'
 import { useLayout } from '@/hooks/useLayout/Context'
 import { theme } from '@/hooks/useChakraTheme/theme'
 
-import { getLenguageIcon, getInitialNameIcon } from './helpers'
+import { getInitialNameIcon } from './helpers'
 import { LanguageModal } from './LanguageModal'
 
 import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
 import { Wrapper } from '@/components/Wrapper'
-import { SizeLanguage } from './SizeLanguage'
+import { Button } from '@/components/Button'
+import { FontSizeModal } from './FontSizeModal'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaSun, FaMoon } from 'react-icons/fa'
@@ -53,35 +54,39 @@ export const Header = () => {
             </>
           )}
 
-          {!isLargerThanHD && <SizeLanguage />}
+          <S.ButtonBox>
+            {!isLargerThanHD && (
+              <Menu placement='bottom-end'>
+                <MenuButton>
+                  <Button>A</Button>
+                </MenuButton>
+                <FontSizeModal />
+              </Menu>
+            )}
 
-          <Menu placement='bottom-end'>
-            <BoxWithLineBelow>
+            <Menu placement='bottom-end'>
               <MenuButton>
-                <BoxWithLineBelow>
-                  {getInitialNameIcon(language)}
-                  <Img width={theme.sizes[18]} mb={theme.sizes[1]} src={getLenguageIcon(language)} />
-                </BoxWithLineBelow>
+                <Button>{getInitialNameIcon(language)}</Button>
               </MenuButton>
-            </BoxWithLineBelow>
-            <LanguageModal />
-          </Menu>
+              <LanguageModal />
+            </Menu>
 
-          {colorMode === ColorMode.dark ? (
-            <S.Menu alignItems='center' onClick={() => handleColorMode(ColorMode.light)}>
-              <FaSun size={theme.sizes[20]} />
-            </S.Menu>
-          ) : (
-            <S.Menu alignItems='center' onClick={() => handleColorMode(ColorMode.dark)}>
-              <FaMoon size={theme.sizes[20]} />
-            </S.Menu>
-          )}
+            {colorMode === ColorMode.dark ? (
+              <Button onClick={() => handleColorMode(ColorMode.light)}>
+                <FaSun size={theme.sizes[16]} />
+              </Button>
+            ) : (
+              <Button onClick={() => handleColorMode(ColorMode.dark)}>
+                <FaMoon size={theme.sizes[16]} />
+              </Button>
+            )}
 
-          {isLargerThanHD && (
-            <S.Menu onClick={() => onIsMenuOpen(true)}>
-              <GiHamburgerMenu />
-            </S.Menu>
-          )}
+            {isLargerThanHD && (
+              <Button onClick={() => onIsMenuOpen(true)}>
+                <GiHamburgerMenu />
+              </Button>
+            )}
+          </S.ButtonBox>
         </S.Nav>
       </Wrapper>
     </S.Container>

@@ -4,6 +4,7 @@ import { Flex } from '@chakra-ui/react'
 
 export const Text = styled(Flex)`
   ${({ theme, color, fontSize, fontWeight }) => css`
+    height: min-content;
     font-weight: ${fontWeight || 700};
     font-size: ${fontSize || theme.sizes[16]};
     color: ${color || theme.colors.text[800]};

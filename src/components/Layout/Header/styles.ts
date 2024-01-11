@@ -6,17 +6,10 @@ export const Container = styled(Flex)`
   ${({ theme }) => css`
     width: 100%;
     height: 6rem;
-    background: ${theme.colors.secondary};
+    background: ${theme.colors.primary};
     box-shadow: 0 ${theme.sizes[2]} ${theme.sizes[2]} rgba(0, 0, 0, 0.2);
     z-index: 100;
   `}
-`
-export const Content = styled(Flex)`
-  width: 100%;
-  max-width: 90rem;
-  margin: auto;
-  align-items: center;
-  justify-content: space-between;
 `
 
 export const Logo = styled(Flex)`
@@ -30,7 +23,9 @@ export const Logo = styled(Flex)`
   `}
 `
 
-export const Nav = styled(Flex)``
+export const Nav = styled(Flex)`
+  align-items: center;
+`
 
 export const Menu = styled(Flex)`
   ${({ theme }) => css`
@@ -39,5 +34,10 @@ export const Menu = styled(Flex)`
       color: ${theme.colors.text[800]};
       cursor: pointer;
     }
+  `}
+`
+export const ButtonBox = styled(Flex)`
+  ${({ theme }) => css`
+    gap: ${theme.sizes[16]};
   `}
 `

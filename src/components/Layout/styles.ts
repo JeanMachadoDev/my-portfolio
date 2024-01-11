@@ -8,6 +8,6 @@ export const Container = styled(Flex)`
 export const Content = styled(Flex)`
   width: 100%;
   flex-direction: column;
-  height: calc(100vh - 96px);
+  height: calc(100vh - 6rem);
   overflow-y: auto;
 `

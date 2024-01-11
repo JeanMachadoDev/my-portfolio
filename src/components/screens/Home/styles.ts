@@ -5,7 +5,7 @@ import { Flex } from '@chakra-ui/react'
 export const Container = styled(Flex)`
   ${({ theme }) => css`
     width: 100%;
-    min-height: calc(100vh - 96px);
+    min-height: calc(100vh - 6.4rem);
     align-items: center;
     justify-content: center;
     background: ${theme.colors.primary};
@@ -28,14 +28,6 @@ export const LargeText = styled(Flex)`
     line-height: ${theme.sizes[48]};
     gap: ${theme.sizes[16]};
     color: ${color || theme.colors.text[800]};
-  `}
-`
-
-export const Text = styled(Flex)`
-  ${({ theme }) => css`
-    font-weight: 500;
-    font-size: ${theme.sizes[16]};
-    color: ${theme.colors.text[500]};
   `}
 `
 
