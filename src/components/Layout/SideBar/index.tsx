@@ -1,4 +1,6 @@
-import { Drawer, DrawerContent, DrawerFooter, DrawerOverlay } from '@chakra-ui/react'
+import { Drawer, DrawerContent, DrawerOverlay } from '@chakra-ui/react'
+
+import { scrollToSection } from '@/utils/functions/scrollToSection'
 
 import { theme } from '@/hooks/useChakraTheme/theme'
 import { useLayout } from '@/hooks/useLayout/Context'
@@ -23,8 +25,12 @@ export const SideBar = () => {
         <S.CloseButtom />
 
         <S.Content>
-          <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Home').toLocaleUpperCase()}</BoxWithLineBelow>
-          <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('About').toLocaleUpperCase()}</BoxWithLineBelow>
+          <BoxWithLineBelow fontSize={theme.sizes[22]} onClick={() => scrollToSection('home')}>
+            {t('Home').toLocaleUpperCase()}
+          </BoxWithLineBelow>
+          <BoxWithLineBelow fontSize={theme.sizes[22]} onClick={() => scrollToSection('about')}>
+            {t('About').toLocaleUpperCase()}
+          </BoxWithLineBelow>
           <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Skills').toLocaleUpperCase()}</BoxWithLineBelow>
           <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Services').toLocaleUpperCase()}</BoxWithLineBelow>
           <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Projects').toLocaleUpperCase()}</BoxWithLineBelow>
