@@ -30,4 +30,9 @@ export const theme = {
     48: '3.2rem',
     64: '4.2667rem',
   },
+  screenSizes: {
+    small: '540px',
+    middle: '760px',
+    large: '1080px',
+  },
 }

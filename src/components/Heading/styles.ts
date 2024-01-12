@@ -24,6 +24,11 @@ const headingSizeModifiers = {
     font-size: ${theme.sizes[48]};
     line-height: ${theme.sizes[48]};
     gap: ${theme.sizes[12]};
+
+    @media screen and (max-width: 540px) {
+      font-size: ${theme.sizes[32]};
+      line-height: ${theme.sizes[32]};
+    }
   `,
 }
 
@@ -44,7 +49,7 @@ const headingColorModifiers = {
 export const Heading = styled(Flex)`
   ${({ theme, size, color }: HeadingStylesProps) => css`
     font-weight: 600;
-    white-space: nowrap;
+    flex-wrap: wrap;
 
     ${!!size && headingSizeModifiers[size](theme!)};
     ${!!color && headingColorModifiers[color](theme!)};

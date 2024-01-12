@@ -47,6 +47,11 @@ declare module '@emotion/react' {
       48: string
       64: string
     }
+    screenSizes: {
+      small: string
+      middle: string
+      large: string
+    }
   }
 
   export function useTheme<T = ChakraTheme>(): T

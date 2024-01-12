@@ -1,6 +1,7 @@
 import { Menu, MenuButton, useColorMode, useMediaQuery } from '@chakra-ui/react'
 
 import { ColorMode, ColorModeProps } from '@/hooks/useColorTheme/types'
+import { scrollToSection } from '@/utils/functions/scrollToSection'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 import { useTranslation } from '@/hooks/useTranslation/Context'
 import { useLayout } from '@/hooks/useLayout/Context'
@@ -34,7 +35,7 @@ export const Header = () => {
 
   return (
     <S.Container>
-      <Wrapper>
+      <Wrapper isResponsive={false}>
         <S.Logo>
           WEB
           <S.Logo color={colorTheme.quartiary} fontWeight={800}>
@@ -45,8 +46,14 @@ export const Header = () => {
         <S.Nav gap={[theme.sizes[32], theme.sizes[32], theme.sizes[42]]}>
           {!isLargerThanHD && (
             <>
-              <BoxWithLineBelow>{t('Home').toLocaleUpperCase()}</BoxWithLineBelow>
-              <BoxWithLineBelow>{t('About').toLocaleUpperCase()}</BoxWithLineBelow>
+              <BoxWithLineBelow onClick={() => scrollToSection('home')}>
+                {t('Home').toLocaleUpperCase()}
+              </BoxWithLineBelow>
+
+              <BoxWithLineBelow onClick={() => scrollToSection('about')}>
+                {t('About').toLocaleUpperCase()}
+              </BoxWithLineBelow>
+
               <BoxWithLineBelow>{t('Skills').toLocaleUpperCase()}</BoxWithLineBelow>
               <BoxWithLineBelow>{t('Services').toLocaleUpperCase()}</BoxWithLineBelow>
               <BoxWithLineBelow>{t('Projects').toLocaleUpperCase()}</BoxWithLineBelow>

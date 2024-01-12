@@ -5,11 +5,25 @@ import { Flex } from '@chakra-ui/react'
 export const Container = styled(Flex)`
   ${({ theme }) => css`
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 6rem);
     align-items: center;
     justify-content: center;
     background: ${theme.colors.primary};
     z-index: 100;
+    gap: ${theme.sizes[32]};
+
+    @media screen and (max-width: ${theme.screenSizes.large}) {
+      min-height: 100%;
+      padding-top: ${theme.sizes[64]};
+      padding-bottom: ${theme.sizes[64]};
+    }
+
+    @media screen and (max-width: ${theme.screenSizes.middle}) {
+      height: 100%;
+      min-height: 100%;
+      padding-top: calc(${theme.sizes[64]});
+      padding-bottom: ${theme.sizes[64]};
+    }
   `}
 `
 export const LeftContent = styled(Flex)`
@@ -26,6 +40,10 @@ export const RightContent = styled(Flex)`
     width: 100%;
     min-height: 100%;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+
+    @media screen and (max-width: ${theme.screenSizes.middle}) {
+      display: none;
+    }
   `}
 `

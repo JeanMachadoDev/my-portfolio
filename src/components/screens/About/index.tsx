@@ -5,6 +5,8 @@ import { Wrapper } from '@/components/Wrapper'
 import { Button } from '@/components/Button'
 import { Heading } from '@/components/Heading'
 import { Text } from '@/components/Text'
+import { Frame } from '@/components/Frame'
+import { Img } from '@chakra-ui/react'
 
 import { BiSolidDownload } from 'react-icons/bi'
 
@@ -16,8 +18,14 @@ export const About = () => {
   const handleDownload = () => downloadCv()
 
   return (
-    <S.Container>
+    <S.Container id='about'>
       <Wrapper>
+        <S.RightContent>
+          <Frame>
+            <Img zIndex={10} src='images/man.png' />
+          </Frame>
+        </S.RightContent>
+
         <S.LeftContent>
           <Heading color='blue'>{t('About me').toLocaleUpperCase()}</Heading>
 
@@ -39,7 +47,6 @@ export const About = () => {
             <BiSolidDownload />
           </Button>
         </S.LeftContent>
-        <S.RightContent></S.RightContent>
       </Wrapper>
     </S.Container>
   )

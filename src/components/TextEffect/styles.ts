@@ -7,5 +7,9 @@ export const Text = styled(TypeAnimation)`
     font-weight: 800;
     font-size: ${theme.sizes[48]};
     color: ${theme.colors.quintiario};
+
+    @media screen and (max-width: ${theme.screenSizes.small}) {
+      font-size: ${theme.sizes[32]};
+    }
   `}
 `

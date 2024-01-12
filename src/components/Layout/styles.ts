@@ -10,4 +10,8 @@ export const Content = styled(Flex)`
   flex-direction: column;
   height: calc(100vh - 6rem);
   overflow-y: auto;
+
+  @media screen and (max-width: 1080px) {
+    height: 100%;
+  }
 `

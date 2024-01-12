@@ -8,7 +8,11 @@ export const Container = styled(Flex)`
     height: 6rem;
     background: ${theme.colors.primary};
     box-shadow: 0 ${theme.sizes[2]} ${theme.sizes[2]} rgba(0, 0, 0, 0.2);
-    z-index: 100;
+    z-index: 150;
+
+    @media screen and (max-width: ${theme.screenSizes.large}) {
+      position: fixed;
+    }
   `}
 `
 
