@@ -10,6 +10,8 @@ import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
 import { useTranslation } from '@/hooks/useTranslation/Context'
 import { SizeLanguage } from '../Header/SizeLanguage'
 
+import { IoClose } from 'react-icons/io5'
+
 import * as S from './styles'
 
 export const SideBar = () => {
@@ -22,9 +24,11 @@ export const SideBar = () => {
       <DrawerOverlay />
 
       <DrawerContent maxWidth={['80%', '22.5rem', '22.5rem']}>
-        <S.CloseButtom />
-
         <S.Content>
+          <S.Button onClick={() => setIsMenuOpen(false)}>
+            <IoClose />
+          </S.Button>
+
           <BoxWithLineBelow fontSize={theme.sizes[22]} onClick={() => scrollToSection('home')}>
             {t('Home').toLocaleUpperCase()}
           </BoxWithLineBelow>
@@ -37,7 +41,7 @@ export const SideBar = () => {
           <BoxWithLineBelow fontSize={theme.sizes[22]}>{t('Contact').toLocaleUpperCase()}</BoxWithLineBelow>
         </S.Content>
 
-        <S.Footer borderTopWidth={theme.sizes[1]} borderColor={colorTheme.border}>
+        <S.Footer>
           <SizeLanguage fontSize={theme.sizes[22]} />
         </S.Footer>
       </DrawerContent>
