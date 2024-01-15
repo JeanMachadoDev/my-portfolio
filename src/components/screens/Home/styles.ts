@@ -23,6 +23,7 @@ export const LeftContent = styled(Flex)`
       justify-content: center;
       gap: ${theme.sizes[16]};
       min-height: calc(100vh);
+      padding-top: 6.4rem;
     }
   `}
 `
@@ -38,14 +39,14 @@ export const LargeText = styled(Flex)`
 `
 
 export const RightContent = styled(Flex)`
-  ${({ theme, color }) => css`
+  ${({ theme }) => css`
     width: 100%;
     min-height: 100%;
     justify-content: center;
     align-items: center;
 
     @media screen and (max-width: ${theme.screenSizes.large}) {
-      min-height: calc(100vh);
+      min-height: calc(100vh - 6rem);
     }
   `}
 `

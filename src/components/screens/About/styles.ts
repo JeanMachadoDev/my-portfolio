@@ -21,7 +21,7 @@ export const LeftContent = styled(Flex)`
     z-index: 100;
 
     @media screen and (max-width: ${theme.screenSizes.large}) {
-      min-height: calc(100vh);
+      min-height: calc(100vh - 6rem);
       justify-content: center;
     }
   `}
