@@ -10,7 +10,7 @@ export const ChakraThemeProvider = ({ children }: { children: React.ReactNode })
   const createTheme = extendTheme({
     ...theme,
     config: {
-      initialColorMode: ColorMode.dark,
+      initialColorMode: ColorMode.light,
       useSystemColorMode: false,
     },
     colors: { ...chakraTheme.colors, ...colorTheme },

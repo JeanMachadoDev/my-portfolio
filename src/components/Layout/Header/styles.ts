@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import { Flex } from '@chakra-ui/react'
+import { Button as ButtonComponent } from '@/components/Button'
 
 export const Container = styled(Flex)`
   ${({ theme }) => css`
@@ -43,5 +44,19 @@ export const Menu = styled(Flex)`
 export const ButtonBox = styled(Flex)`
   ${({ theme }) => css`
     gap: ${theme.sizes[16]};
+  `}
+`
+
+export const Button = styled(ButtonComponent)`
+  ${({ theme }) => css`
+    @media screen and (max-width: ${theme?.screenSizes.small}) {
+      min-width: 2.8rem;
+      height: 2.8rem;
+      font-size: ${theme?.sizes[18]};
+
+      svg {
+        font-size: ${theme?.sizes[18]};
+      }
+    }
   `}
 `

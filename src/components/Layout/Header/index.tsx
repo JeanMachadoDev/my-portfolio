@@ -12,7 +12,6 @@ import { LanguageModal } from './LanguageModal'
 
 import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
 import { Wrapper } from '@/components/Wrapper'
-import { Button } from '@/components/Button'
 import { FontSizeModal } from './FontSizeModal'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -65,7 +64,7 @@ export const Header = () => {
             {!isLargerThanHD && (
               <Menu placement='bottom-end'>
                 <MenuButton>
-                  <Button>A</Button>
+                  <S.Button>A</S.Button>
                 </MenuButton>
                 <FontSizeModal />
               </Menu>
@@ -73,25 +72,25 @@ export const Header = () => {
 
             <Menu placement='bottom-end'>
               <MenuButton>
-                <Button>{getInitialNameIcon(language)}</Button>
+                <S.Button>{getInitialNameIcon(language)}</S.Button>
               </MenuButton>
               <LanguageModal />
             </Menu>
 
             {colorMode === ColorMode.dark ? (
-              <Button onClick={() => handleColorMode(ColorMode.light)}>
+              <S.Button onClick={() => handleColorMode(ColorMode.light)}>
                 <FaSun size={theme.sizes[16]} />
-              </Button>
+              </S.Button>
             ) : (
-              <Button onClick={() => handleColorMode(ColorMode.dark)}>
+              <S.Button onClick={() => handleColorMode(ColorMode.dark)}>
                 <FaMoon size={theme.sizes[16]} />
-              </Button>
+              </S.Button>
             )}
 
             {isLargerThanHD && (
-              <Button onClick={() => setIsMenuOpen(true)}>
+              <S.Button onClick={() => setIsMenuOpen(true)}>
                 <GiHamburgerMenu />
-              </Button>
+              </S.Button>
             )}
           </S.ButtonBox>
         </S.Nav>
