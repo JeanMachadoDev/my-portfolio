@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { TranslationContext } from './Context'
 import { Languages, LocaleProps } from '@/locales/types'
@@ -6,6 +6,7 @@ import { locales } from '@/locales'
 
 import { ReactChildrenProps } from '@/utils/globalTypes/types'
 import { getLocalStorage, setLocalStorage } from '@/utils/localStorage'
+import { TranslationsKeysProps } from './types'
 
 export const TranslationProvider = ({ children }: ReactChildrenProps) => {
   const [language, setLanguage] = useState<LocaleProps>('en-US')
@@ -20,8 +21,8 @@ export const TranslationProvider = ({ children }: ReactChildrenProps) => {
   }, [])
 
   const t = useCallback(
-    (value: string) => {
-      const text = locales[language][value]
+    (value: string | TranslationsKeysProps) => {
+      const text = locales[language][value as TranslationsKeysProps]
 
       if (!text) return value
 
