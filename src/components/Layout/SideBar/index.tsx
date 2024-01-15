@@ -3,7 +3,7 @@ import { Drawer, DrawerContent, DrawerOverlay } from '@chakra-ui/react'
 import { scrollToSection } from '@/utils/functions/scrollToSection'
 
 import { theme } from '@/hooks/useChakraTheme/theme'
-import { useLayout } from '@/hooks/useLayout/context'
+import { useLayout } from '@/hooks/useLayout/state'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 
 import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'

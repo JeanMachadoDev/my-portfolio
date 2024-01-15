@@ -2,7 +2,7 @@ import { theme } from '@/hooks/useChakraTheme/theme'
 import { SizeLanguageProps } from './types'
 
 import { Button } from '@/components/Button'
-import { useLayout } from '@/hooks/useLayout/context'
+import { useLayout } from '@/hooks/useLayout/state'
 
 import * as S from './styles'
 

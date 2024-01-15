@@ -1,6 +1,6 @@
 import { useMediaQuery } from '@chakra-ui/react'
 
-import { useLayout } from '@/hooks/useLayout/context'
+import { useLayout } from '@/hooks/useLayout/state'
 import { Button } from '@/components/Button'
 import { theme } from '@/hooks/useChakraTheme/theme'
 
