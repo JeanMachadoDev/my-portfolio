@@ -30,6 +30,7 @@ export const Container = styled(Flex)<ContainerStylesProps>`
     `}
 
     @media screen and (max-width: ${theme.screenSizes.middle}) {
+      gap: ${theme.sizes[32]};
       padding: 0 ${theme.sizes[32]} 0 ${theme.sizes[32]};
     }
   `}
