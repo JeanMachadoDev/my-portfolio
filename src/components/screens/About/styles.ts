@@ -11,19 +11,6 @@ export const Container = styled(Flex)`
     background: ${theme.colors.primary};
     z-index: 100;
     gap: ${theme.sizes[32]};
-
-    @media screen and (max-width: ${theme.screenSizes.large}) {
-      min-height: 100%;
-      padding-top: ${theme.sizes[64]};
-      padding-bottom: ${theme.sizes[64]};
-    }
-
-    @media screen and (max-width: ${theme.screenSizes.middle}) {
-      height: 100%;
-      min-height: 100%;
-      padding-top: calc(${theme.sizes[64]});
-      padding-bottom: ${theme.sizes[64]};
-    }
   `}
 `
 export const LeftContent = styled(Flex)`
@@ -32,6 +19,11 @@ export const LeftContent = styled(Flex)`
     flex-direction: column;
     gap: ${theme.sizes[32]};
     z-index: 100;
+
+    @media screen and (max-width: ${theme.screenSizes.large}) {
+      min-height: calc(100vh);
+      justify-content: center;
+    }
   `}
 `
 
@@ -42,7 +34,7 @@ export const RightContent = styled(Flex)`
     justify-content: center;
     align-items: center;
 
-    @media screen and (max-width: ${theme.screenSizes.middle}) {
+    @media screen and (max-width: ${theme.screenSizes.large}) {
       display: none;
     }
   `}

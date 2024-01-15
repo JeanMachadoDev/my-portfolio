@@ -4,7 +4,7 @@ import { ColorMode, ColorModeProps } from '@/hooks/useColorTheme/types'
 import { scrollToSection } from '@/utils/functions/scrollToSection'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 import { useTranslation } from '@/hooks/useTranslation/Context'
-import { useLayout } from '@/hooks/useLayout/state'
+import { useLayout } from '@/hooks/useLayout'
 import { theme } from '@/hooks/useChakraTheme/theme'
 
 import { getInitialNameIcon } from './helpers'
