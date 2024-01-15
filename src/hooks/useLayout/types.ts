@@ -1,7 +1,7 @@
 export type LayoutContextProps = {
   isMenuOpen: boolean
-  onIsMenuOpen: (value: boolean) => void
-  onDefaultFontSize: () => void
-  onDecreaseFontSize: () => void
-  onIncreaseFontSize: () => void
+  setIsMenuOpen: (value: boolean) => void
+  setDefaultFontSize: () => void
+  setDecreaseFontSize: () => void
+  setIncreaseFontSize: () => void
 }

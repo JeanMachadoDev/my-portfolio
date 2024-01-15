@@ -3,7 +3,7 @@ import { Drawer, DrawerContent, DrawerOverlay } from '@chakra-ui/react'
 import { scrollToSection } from '@/utils/functions/scrollToSection'
 
 import { theme } from '@/hooks/useChakraTheme/theme'
-import { useLayout } from '@/hooks/useLayout/Context'
+import { useLayout } from '@/hooks/useLayout/context'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 
 import { BoxWithLineBelow } from '@/components/BoxWithLineBelow'
@@ -13,12 +13,12 @@ import { SizeLanguage } from '../Header/SizeLanguage'
 import * as S from './styles'
 
 export const SideBar = () => {
-  const { isMenuOpen, onIsMenuOpen } = useLayout()
+  const { isMenuOpen, setIsMenuOpen } = useLayout()
   const { colorTheme } = useColorTheme()
   const { t } = useTranslation()
 
   return (
-    <Drawer isOpen={isMenuOpen} placement='left' onClose={() => onIsMenuOpen(false)}>
+    <Drawer isOpen={isMenuOpen} placement='left' onClose={() => setIsMenuOpen(false)}>
       <DrawerOverlay />
 
       <DrawerContent maxWidth={['80%', '22.5rem', '22.5rem']}>

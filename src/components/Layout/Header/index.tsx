@@ -4,7 +4,7 @@ import { ColorMode, ColorModeProps } from '@/hooks/useColorTheme/types'
 import { scrollToSection } from '@/utils/functions/scrollToSection'
 import { useColorTheme } from '@/hooks/useColorTheme/Context'
 import { useTranslation } from '@/hooks/useTranslation/Context'
-import { useLayout } from '@/hooks/useLayout/Context'
+import { useLayout } from '@/hooks/useLayout/context'
 import { theme } from '@/hooks/useChakraTheme/theme'
 
 import { getInitialNameIcon } from './helpers'
@@ -23,7 +23,7 @@ import * as S from './styles'
 export const Header = () => {
   const [isLargerThanHD] = useMediaQuery(['(max-width: 1350px)', '(display-mode: browser)'])
 
-  const { onIsMenuOpen } = useLayout()
+  const { setIsMenuOpen } = useLayout()
   const { colorMode, toggleColorMode } = useColorMode()
   const { colorTheme, onColorMode } = useColorTheme()
   const { language, t } = useTranslation()
@@ -89,7 +89,7 @@ export const Header = () => {
             )}
 
             {isLargerThanHD && (
-              <Button onClick={() => onIsMenuOpen(true)}>
+              <Button onClick={() => setIsMenuOpen(true)}>
                 <GiHamburgerMenu />
               </Button>
             )}

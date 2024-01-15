@@ -2,20 +2,20 @@ import { theme } from '@/hooks/useChakraTheme/theme'
 import { SizeLanguageProps } from './types'
 
 import { Button } from '@/components/Button'
-import { useLayout } from '@/hooks/useLayout/Context'
+import { useLayout } from '@/hooks/useLayout/context'
 
 import * as S from './styles'
 
 export const SizeLanguage = ({ ...rest }: SizeLanguageProps) => {
-  const { onDecreaseFontSize, onDefaultFontSize, onIncreaseFontSize } = useLayout()
+  const { setDecreaseFontSize, setDefaultFontSize, setIncreaseFontSize } = useLayout()
 
   return (
     <S.Container gap={theme.sizes[32]} onClick={(event) => event.stopPropagation()} {...rest}>
-      <Button onClick={onDecreaseFontSize}>-A</Button>
+      <Button onClick={setDecreaseFontSize}>-A</Button>
 
-      <Button onClick={onDefaultFontSize}>A</Button>
+      <Button onClick={setDefaultFontSize}>A</Button>
 
-      <Button onClick={onIncreaseFontSize}>+A</Button>
+      <Button onClick={setIncreaseFontSize}>+A</Button>
     </S.Container>
   )
 }

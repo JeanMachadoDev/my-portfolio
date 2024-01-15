@@ -1,6 +1,12 @@
-import { createContext, useContext } from 'react';
-import { LayoutContextProps } from './types';
+import { create } from 'zustand'
+import { setDecreaseFontSize, setDefaultFontSize, setIncreaseFontSize } from './provider'
+import { LayoutContextProps } from './types'
 
-export const LayoutContext = createContext({} as LayoutContextProps);
+export const useLayout = create<LayoutContextProps>((set) => ({
+  isMenuOpen: false,
+  setIsMenuOpen: (value: boolean) => set({ isMenuOpen: value }),
 
-export const useLayout = () => useContext(LayoutContext);
+  setDecreaseFontSize,
+  setDefaultFontSize,
+  setIncreaseFontSize,
+}))
